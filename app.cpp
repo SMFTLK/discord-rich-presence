@@ -4,6 +4,12 @@ VMPHandler::VMPActivity::VMPActivity()
 {
 	discord::Core::Create(this->clientID, this->flags, &this->core);
 	this->activity = new discord::Activity();
+
+	activity->SetState(state);
+	activity->SetDetails(details);
+	activity->SetInstance(true);
+
+	(*core).ActivityManager().UpdateActivity(*activity, [](discord::Result result) {});
 }
 
 VMPHandler::VMPActivity::~VMPActivity()
@@ -14,10 +20,5 @@ VMPHandler::VMPActivity::~VMPActivity()
 
 void VMPHandler::VMPActivity::Update()
 {
-	activity->SetState("Your text");
-	activity->SetDetails("Your text");
-	activity->SetInstance(true);
-
-	(*core).ActivityManager().UpdateActivity(*activity, [](discord::Result result) {});
 	(*core).RunCallbacks();
 }

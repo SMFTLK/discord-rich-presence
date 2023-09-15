@@ -16,9 +16,12 @@ namespace VMPHandler
 
 	private:
 		const	discord::ClientId	clientID = 1152148235985637430;
-			discord::Core*		core{};
-			discord::Activity*	activity{};
+				discord::Core*		core{};
+				discord::Activity*	activity{};
 
 		const uint8_t flags	= static_cast<uint8_t>(discord::CreateFlags::Default);
+
+		const char* state = "Your text";
+		const char* details = "Your text";
 	};
 }
