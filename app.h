@@ -15,7 +15,7 @@ namespace VMPHandler
 		void Update();
 
 	private:
-		const	discord::ClientId	clientID = 1152148235985637430;
+		const	discord::ClientId	clientID = <your client id>;
 				discord::Core*		core{};
 				discord::Activity*	activity{};
 
