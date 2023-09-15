@@ -14,8 +14,8 @@ VMPHandler::VMPActivity::~VMPActivity()
 
 void VMPHandler::VMPActivity::Update()
 {
-	activity->SetState("In play mode");
-	activity->SetDetails("Playing huynya");
+	activity->SetState("Your text");
+	activity->SetDetails("Your text");
 	activity->SetInstance(true);
 
 	(*core).ActivityManager().UpdateActivity(*activity, [](discord::Result result) {});
